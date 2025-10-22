@@ -1,0 +1,230 @@
+// ===============================
+// Button Styles
+// ===============================
+
+// Remove icon from constructive action buttons
+.ss-ui-action-constructive[data-icon]::before {
+  content: none !important;
+}
+
+// Dialog button styles
+.ui-dialog {
+  .linkfield-dialog {
+    .btn-toolbar {
+      .btn {
+        background-color: var(--cms-accent-colour) !important;
+        color: var(--cms-accent-text-colour, var(--cms-background-colour--dark));
+      }
+    }
+  }
+}
+
+// TinyMCE primary button
+.mce-btn.mce-primary {
+  background-color: var(--cms-accent-colour) !important;
+
+  .mce-txt {
+    color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+  }
+}
+
+// Generic button
+.btn {
+  border-radius: 5px;
+  border: 0;
+
+  &.btn-primary {
+    color: var(--cms-accent-text-colour, var(--cms-background-colour--dark));
+    background-color: var(--cms-accent-colour) !important;
+    opacity: 1;
+    transition: opacity .2s ease;
+
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+  }
+}
+
+// Outline primary button
+.btn-outline-primary {
+  color: var(--cms-link-colour) !important;
+
+  &:hover,
+  &:focus {
+    background-color: transparent !important;
+  }
+}
+
+// Button group
+.btn-group .btn-primary {
+  border-left: 0 !important;
+}
+
+// Gridfield multi-class add button
+.ss-gridfield-add-new-multi-class {
+  .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:before {
+      line-height: 25px !important;
+    }
+  }
+}
+
+// Preview states
+#preview-states {
+  .state-name {
+    box-shadow: none !important;
+    background-image: none !important;
+    border: 0 !important;
+
+    &.active {
+      background-color: var(--cms-accent-colour);
+    }
+  }
+}
+
+// Secondary button
+.btn-secondary {
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: var(--cms-background-colour--dark) !important;
+  }
+}
+
+// Outline secondary button
+.btn-outline-secondary {
+  background-color: var(--cms-background-colour--light) !important;
+
+  &.action_gridfield_relationadd {
+    border: 1px solid var(--cms-border-colour);
+    margin-left: -4px !important;
+  }
+
+  &.disabled,
+  &:disabled {
+    border: 1px solid transparent !important;
+    background-color: transparent !important;
+  }
+
+  &:hover {
+    border-color: var(--cms-border-colour) !important;
+    color: var(--cms-accent-colour) !important;
+
+    &.disabled,
+    &:disabled {
+      background-color: transparent !important;
+      border: 1px solid transparent !important;
+      color: var(--cms-text-colour) !important;
+    }
+  }
+
+  color: var(--cms-text-colour) !important;
+}
+
+// Primary button text
+.btn.btn-primary {
+  color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+}
+
+// Active/pressed button
+.btn:not(:disabled):not(.disabled).active,
+.btn:not(:disabled):not(.disabled):active {
+  box-shadow: none !important;
+  background-color: var(--cms-background-colour--light) !important;
+}
+
+// Circular buttons in toolbars
+.toolbar--content .btn--circular,
+.toolbar--north .btn--circular,
+.toolbar--south .btn--circular,
+.toolbar .btn--circular {
+  padding-left: 7px !important;
+  padding-right: 7px !important;
+
+  &:before {
+    margin-right: 0 !important;
+  }
+}
+
+// Circular button groups in toolbars
+.toolbar--content .btn-group--circular>.btn,
+.toolbar--content .btn-group--circular>.btn:hover,
+.toolbar--north .btn-group--circular>.btn,
+.toolbar--north .btn-group--circular>.btn:hover,
+.toolbar--south .btn-group--circular>.btn,
+.toolbar--south .btn-group--circular>.btn:hover,
+.toolbar .btn-group--circular>.btn,
+.toolbar .btn-group--circular>.btn:hover {
+  background-color: var(--cms-accent-colour) !important;
+  border-color: transparent !important;
+}
+
+.toolbar--content .btn-group--circular>.btn:before,
+.toolbar--content .btn-group--circular>.btn:hover:before,
+.toolbar--north .btn-group--circular>.btn:before,
+.toolbar--north .btn-group--circular>.btn:hover:before,
+.toolbar--south .btn-group--circular>.btn:before,
+.toolbar--south .btn-group--circular>.btn:hover:before,
+.toolbar .btn-group--circular>.btn:before,
+.toolbar .btn-group--circular>.btn:hover:before {
+  color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+}
+
+// Primary button focus
+.btn-primary.focus,
+.btn-primary:focus {
+  box-shadow: none !important;
+}
+
+// Disabled buttons
+.btn.disabled,
+.btn:disabled {
+  opacity: .65 !important;
+  filter: saturate(.5) !important;
+  background-color: var(--cms-accent-colour) !important;
+}
+
+// Popover actions and search box
+.popover-actions-simulate,
+.search-box__enter {
+  background-color: var(--cms-border-colour) !important;
+}
+
+.popover-actions-simulate {
+  border-radius: 3px !important;
+}
+
+// Outline secondary button override
+.btn.btn-outline-secondary {
+  background-color: var(--cms-border-colour) !important;
+}
+
+// Switch states
+div.switch-states {
+  .switch {
+    box-shadow: none !important;
+  }
+}
+
+.close {
+  &:before {
+    color: var(--cms-text-colour) !important;
+    text-shadow: none !important;
+  }
+}
+
+.btn-toolbar .ui-tabs-anchor.active {
+  background-color: var(--cms-background-colour--light) !important;
+}
+
+.btn-outline-light:hover {
+  color: var(--cms-background-colour--dark) !important;
+  background-color: var(--cms-text-colour) !important;
+  border-color: var(--cms-text-colour) !important;
+}

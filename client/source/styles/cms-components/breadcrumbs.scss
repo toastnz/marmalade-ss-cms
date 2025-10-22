@@ -1,0 +1,17 @@
+// ===============================
+// Breadcrumbs Styles
+// ===============================
+
+.breadcrumbs-wrapper {
+  .cms-panel-link {
+    color: var(--cms-text-colour) !important;
+
+    &:is(a) {
+      color: var(--cms-link-colour) !important;
+    }
+  }
+}
+
+a.breadcrumb__item-title {
+  color: var(--cms-link-colour) !important;
+}

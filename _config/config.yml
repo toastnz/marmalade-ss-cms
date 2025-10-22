@@ -1,0 +1,19 @@
+---
+Name: marmalade-ss-cms
+---
+
+PageController:
+  extensions:
+    - Toast\MarmaladeSSCMS\Extensions\PageExtension
+
+SilverStripe\Admin\LeftAndMain:
+  extensions:
+    - Toast\MarmaladeSSCMS\Extensions\LeftAndMainExtension
+
+SilverStripe\Dev\DevelopmentAdmin:
+  extensions:
+    - Toast\MarmaladeSSCMS\Extensions\DevelopmentAdminExtension
+
+SilverStripe\Dev\DebugView:
+  extensions:
+    - Toast\MarmaladeSSCMS\Extensions\DebugViewExtension

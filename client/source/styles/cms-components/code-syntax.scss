@@ -1,0 +1,195 @@
+// ===============================
+// Code Element Styles
+// ===============================
+
+code {
+  display: inline-block;
+  max-width: 100%;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: var(--cms-text-colour);
+  font-weight: 500 !important;
+  background-color: hsl(from var(--cms-accent-colour) h s l / 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: inset 0 0 0 1px var(--cms-border-colour);
+}
+
+// ===============================
+// CMS Code Syntax Field Styles
+// ===============================
+
+.cms-edit-form .tab-pane > .form-group.field > .form__field-holder {
+  // Code and textarea base styles
+  textarea[data-language],
+  pre[class*="language-"],
+  code[class*="language-"] {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    font-size: 14px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    overflow-y: hidden !important;
+    letter-spacing: normal !important;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  textarea[data-language],
+  code[class*="language-"] {
+    padding: 1rem !important;
+  }
+
+  textarea[data-language] {
+    transition: color .3s ease;
+  }
+
+  // Grid layout for code editor
+  &:has(textarea[data-language]):has(pre > code) {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    textarea[data-language] {
+      resize: none;
+      z-index: 1;
+      caret-color: var(--cms-text-colour);
+      color: transparent !important;
+      background-color: transparent !important;
+      box-shadow: inset 0 0 0 1px var(--cms-border-colour) !important;
+    }
+  }
+}
+
+// ===============================
+// Prism/Highlight.js Theme Styles
+// ===============================
+
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--cms-text-colour);
+  background: none;
+  overflow: hidden;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--cms-background-colour--dark);
+  border-radius: 3px;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  white-space: normal;
+}
+
+// ===============================
+// Highlight.js Styles
+// ===============================
+
+.hljs {
+  color: var(--cms-text-colour);
+  // background: #282c34
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--code-syntax-gray);
+  font-style: italic;
+}
+
+.hljs-attr,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula,
+.hljs-selector-class {
+  color: var(--code-syntax-purple);
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: var(--code-syntax-red);
+}
+
+.hljs-literal {
+  color: var(--code-syntax-blue);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: var(--code-syntax-green);
+}
+
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: var(--code-syntax-orange);
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: var(--code-syntax-blue);
+}
+
+.hljs-built_in,
+.hljs-variable,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: var(--code-syntax-yellow);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+// ===============================
+// CSS Language Specific
+// ===============================
+
+.language-css {
+  .hljs-attribute {
+    color: var(--code-syntax-yellow);
+  }
+}

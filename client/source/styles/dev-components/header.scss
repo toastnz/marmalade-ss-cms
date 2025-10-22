@@ -1,0 +1,35 @@
+.info.header {
+  color: var(--dev-text-colour)!important;
+  background-color: var(--dev-background-colour--light);
+  border-bottom: 1px solid var(--dev-border-colour);
+  padding: 15px!important;
+
+  &:first-child {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+
+    + * {
+      margin-top: 120px;
+    }
+  }
+
+  &.error {
+    background-color: #5e3535;
+    border: 0!important;
+    border-radius: 1rem;
+    margin-top: 3rem;
+    padding: 1.5rem!important;
+  }
+
+  // h1 {
+    // background: url('images/icons/silverstripe.svg') no-repeat right center / contain!important;
+  // }
+
+  h1,
+  h3 {
+    color: inherit!important;
+  }
+}

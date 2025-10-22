@@ -1,0 +1,17 @@
+// ===============================
+// Badge Styles
+// ===============================
+
+.badge {
+  // Version status badge
+  &.version-status {
+    background-color: var(--cms-background-colour--light);
+    border-color: var(--cms-border-colour);
+  }
+}
+
+// Success badge
+.badge-success {
+  background-color: var(--cms-accent-colour) !important;
+  color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+}

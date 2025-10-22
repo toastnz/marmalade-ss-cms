@@ -1,0 +1,359 @@
+.mce-panel {
+  background-color: var(--cms-background-colour--dark) !important;
+  border-color: var(--cms-border-colour) !important;
+}
+
+.mce-btn-group {
+  border-color: var(--cms-border-colour) !important;
+}
+
+.mce-txt,
+.mce-title,
+.mce-path-item,
+.mce-divider {
+  color: var(--cms-text-colour) !important;
+}
+
+.mce-menu-item {
+
+  &:hover,
+  &:focus,
+  &.mcs-selected,
+  &.mce-selected {
+    background-color: var(--cms-background-colour--dark) !important;
+  }
+
+  .mce-text,
+  .mce-ico {
+    color: var(--cms-text-colour);
+  }
+
+  .mce-caret {
+    border-top-color: transparent !important;
+    border-left-color: var(--cms-text-colour) !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+  }
+}
+
+.mce-menu-item-sep {
+  background: var(--cms-background-colour--dark) !important;
+  border-color: var(--cms-background-colour--dark) !important;
+}
+
+.mce-caret {
+  border-top-color: var(--cms-text-colour) !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+.mce-btn {
+  background-color: transparent !important;
+  border-color: transparent !important;
+
+  &.mce-active {
+    background-color: var(--cms-background-colour--light) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+
+  i {
+    color: var(--cms-text-colour) !important;
+    text-shadow: none !important;
+  }
+}
+
+.mce-menu-item {
+
+  .mce-text,
+  .mce-ico {
+    color: var(--cms-text-colour) !important;
+  }
+}
+
+.mce-tinymce iframe {
+  background-color: #ffffff;
+}
+
+.editor {
+  border-color: var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour) !important;
+}
+
+.editor__thumbnail {
+  border-top: 1px solid var(--cms-border-colour) !important;
+  border-bottom: 1px solid var(--cms-border-colour) !important;
+}
+
+// ===============================
+// TinyMCE Editor Styles
+// ===============================
+
+// Colours-only variant
+.colours-only {
+  .tox-tinymce {
+    min-height: 150px !important;
+  }
+}
+
+// Main editor container
+.tox-tinymce {
+  min-height: 400px !important;
+  color: var(--cms-text-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+
+  iframe {
+    background-color: var(--_background-colour, #fff) !important;
+  }
+
+  .tox-toolbar {
+    .tox-bg-toggle {
+      position: relative;
+      display: block;
+      padding-left: 2em;
+      font-size: 12px;
+      cursor: pointer;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 1.2em;
+        height: 1.2em;
+        border-radius: 50%;
+        translate: 0 -50%;
+      }
+
+      &:before {
+        background-color: currentColor;
+        clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+      }
+
+      &:after {
+        box-shadow: 0 0 0 2px currentColor;
+      }
+
+      &.active {
+
+        &:before,
+        &:after {
+          color: var(--cms-accent-colour);
+        }
+      }
+    }
+  }
+}
+
+// Toolbar and header
+.tox-toolbar,
+.tox .tox-toolbar-overlord,
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+  color: var(--cms-text-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour--dynamic) !important;
+}
+
+// Toolbar buttons
+.tox .tox-tbtn {
+  border: 0 !important;
+  color: var(--cms-text-colour) !important;
+  background-color: var(--cms-background-colour--dynamic) !important;
+
+  &.tox-tbtn--enabled,
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+    background-color: var(--cms-accent-colour) !important;
+  }
+
+  svg {
+    fill: currentColor !important;
+  }
+}
+
+.tox:not([dir="rtl"]) .tox-toolbar__group:not(:last-of-type) {
+  border-color: var(--cms-border-colour) !important;
+}
+
+// Collection item label
+.tox .tox-collection__item-label {
+  line-height: 1 !important;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div[style] {
+    font-size: 16px !important;
+  }
+}
+
+// Menu styles
+.tox-menu {
+  border-color: var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour--light) !important;
+}
+
+// Collection item
+.tox-collection__item {
+  * {
+    border: 0 !important;
+    background-color: transparent !important;
+    color: var(--cms-text-colour) !important;
+  }
+
+  &--active {
+    background-color: var(--cms-background-colour--dark) !important;
+
+    * {
+      color: var(--cms-text-colour) !important;
+    }
+  }
+
+  &--enabled {
+    background-color: var(--cms-accent-colour) !important;
+
+    * {
+      color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+    }
+  }
+}
+
+.tox-collection__item-checkmark svg {
+  fill: var(--cms-accent-text-colour) !important;
+}
+
+// Statusbar
+.tox-statusbar {
+  border-color: var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour--light) !important;
+
+  * {
+    color: var(--cms-text-colour) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+}
+
+.tox .tox-statusbar__resize-handle svg {
+  fill: var(--cms-text-colour) !important;
+}
+
+// Dialog styles
+.tox-dialog {
+
+  &,
+  &__header,
+  &__footer {
+    color: var(--cms-text-colour) !important;
+    background-color: var(--cms-background-colour--light) !important;
+  }
+
+  .tox-button {
+    border: 0 !important;
+    color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+    background-color: var(--cms-accent-colour) !important;
+
+    &--secondary {
+      background-color: var(--cms-text-colour) !important;
+    }
+  }
+}
+
+// MCE container styles
+.mce-container {
+  &.mce-inline-toolbar {
+    background-color: var(--cms-background-colour--dark);
+    border-radius: 5px;
+
+    &.mce-arrow-up {
+      .mce-container-body {
+        &:before {
+          border-top-color: transparent;
+        }
+
+        &:after {
+          border-bottom-color: var(--cms-background-colour);
+        }
+      }
+    }
+
+    &.mce-arrow-down {
+      .mce-container-body {
+        &:before {
+          border-bottom-color: transparent;
+        }
+
+        &:after {
+          border-top-color: var(--cms-background-colour);
+        }
+      }
+    }
+  }
+
+  .mce-container-body {
+    background-color: transparent !important;
+  }
+}
+
+// MCE menu item states
+.mce-menu-item:hover,
+.mce-menu-item.mce-selected,
+.mce-menu-item:focus,
+.mce-menu-item-normal.mce-active {
+  background-color: var(--cms-background-colour--light) !important;
+}
+
+// Form options for htmleditor
+#Root_FormOptions {
+  .form-group {
+    >.form__field-holder {
+      &:has(.htmleditor) {
+        max-width: 100% !important;
+        width: 100% !important;
+        flex-basis: 100% !important;
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
+
+// ===============================
+// WYSIWYG Editor Colours Styles
+// ===============================
+
+.htmleditor {
+  .tox-tbtn {
+    &--bespoke {
+      color: var(--cms-text-colour) !important;
+      background-color: var(--cms-background-colour--dark) !important;
+
+      &,
+      * {
+        cursor: pointer !important;
+      }
+    }
+  }
+
+  &.colours-only {
+    .tox-tbtn {
+      &--select {
+        .tox-tbtn__select-label {
+          font-size: 0;
+          width: 70px;
+
+          &:before {
+            content: 'Colours';
+            font-size: 14px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

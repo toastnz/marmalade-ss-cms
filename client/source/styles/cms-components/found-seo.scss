@@ -1,0 +1,33 @@
+// ===============================
+// Found Introduction Styles
+// ===============================
+
+.foundIntroduction {
+  color: var(--cms-text-colour) !important;
+}
+
+// ===============================
+// Found GPT Styles
+// ===============================
+
+.foundGPT {
+  [fill] {
+    fill: var(--cms-text-colour) !important;
+  }
+
+  .btn-primary {
+    [fill] {
+      fill: var(--cms-background-colour) !important;
+    }
+  }
+}
+
+// ===============================
+// Found GPT Container
+// ===============================
+
+.foundGPT__container {
+  color: var(--cms-text-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour) !important;
+}

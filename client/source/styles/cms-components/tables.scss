@@ -1,0 +1,48 @@
+// ===============================
+// Table Styles
+// ===============================
+
+.table {
+  tbody {
+    background-color: var(--cms-background-colour) !important;
+
+    tr {
+      background-color: transparent !important;
+
+      &:hover {
+        background-color: var(--cms-background-colour--dynamic) !important;
+      }
+    }
+
+    +tbody {
+      border-color: var(--cms-border-colour) !important;
+    }
+
+    td,
+    th button {
+      &:hover {
+        background-color: var(--cms-background-colour--dynamic) !important;
+      }
+    }
+  }
+
+  thead {
+    th button {
+      &:hover {
+        background-color: var(--cms-background-colour--dynamic) !important;
+      }
+    }
+  }
+
+  td,
+  th {
+    color: var(--cms-text-colour) !important;
+    border-color: var(--cms-border-colour) !important;
+    background-color: transparent !important;
+
+    button {
+      color: inherit !important;
+      background-color: inherit !important;
+    }
+  }
+}

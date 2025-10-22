@@ -1,0 +1,77 @@
+// ===============================
+// CMS Logo & Version Styles
+// ===============================
+
+body {
+  // CMS Version
+  .cms-version {
+    min-width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 7px 25px;
+    border-bottom: 1px solid var(--cms-border-colour);
+
+    span {
+      padding-left: 0;
+      opacity: .5;
+      color: var(--cms-text-colour);
+    }
+  }
+
+  // CMS Sitename
+  .cms-sitename {
+    &__logo {
+      display: block;
+      width: 100%;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      -webkit-text-fill-color: var(--cms-text-colour);
+    }
+
+    &__image {
+      width: 100%;
+
+      &.darkmode-on {
+        display: none;
+      }
+
+      &.darkmode-off {
+        display: block;
+      }
+
+      img {
+        width: auto;
+        max-width: 100%;
+        height: 50px;
+        object-fit: contain;
+        object-position: left center;
+      }
+    }
+  }
+
+  // Darkmode on
+  &[data-darkmode="on"] {
+    .cms-sitename__image {
+      &.darkmode-on {
+        display: block;
+      }
+      &.darkmode-off {
+        display: none;
+      }
+    }
+  }
+
+  // Darkmode auto (system preference)
+  &[data-darkmode="auto"] {
+    .cms-sitename__image {
+      @media (prefers-color-scheme: dark) {
+        &.darkmode-on {
+          display: block;
+        }
+        &.darkmode-off {
+          display: none;
+        }
+      }
+    }
+  }
+}

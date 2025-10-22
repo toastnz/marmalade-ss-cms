@@ -1,0 +1,166 @@
+.toolbar {
+
+  &--north,
+  &--south {
+    background-color: var(--cms-background-colour--dark) !important;
+    color: var(--cms-text-colour) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+}
+
+.cms-content-tools {
+  box-shadow: 1px 0 0 0 var(--cms-border-colour) !important;
+}
+
+// ===============================
+// CMS Content Toolbar Styles
+// ===============================
+
+.cms-content-toolbar {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+// ===============================
+// Content Header Section Heading
+// ===============================
+
+.cms-content-header {
+  background-color: var(--cms-background-colour--dark) !important;
+  .section-heading {
+    a {
+      color: var(--cms-accent-colour);
+    }
+  }
+}
+
+// ===============================
+// Gridfield Button Row
+// ===============================
+
+.ss-gridfield-buttonrow {
+  background: var(--cms-background-colour) !important;
+  border-bottom-color: var(--cms-border-colour) !important;
+
+  button {
+    &:first-of-type {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+// ===============================
+// South Toolbar & Preview Selector
+// ===============================
+
+.toolbar--south {
+  // background-color: var(--cms-background-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+
+  .preview-selector {
+    .chosen-drop {
+      ul.chosen-results {
+
+        li.result-selected,
+        li.highlighted {
+          background-color: var(--cms-accent-colour) !important;
+          color: var(--cms-accent-text-colour, var(--cms-text-colour)) !important;
+
+          &:before {
+            color: inherit !important;
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ===============================
+// Panel Toggle Styles
+// ===============================
+
+.cms-panel-toggle {
+  display: flex;
+  padding: 10px 20px !important;
+  align-items: center;
+  justify-content: left !important;
+}
+
+// ===============================
+// SilverStripe CMS Toolbar Icon
+// ===============================
+
+.silverstripe-cms-toolbar-icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  background-color: transparent !important;
+
+  &--darkmode {
+    position: relative;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px currentColor;
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: currentColor;
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    }
+
+    &:after {
+      content: attr(data-darkmode);
+      position: absolute;
+      display: block;
+      color: var(--cms-text-colour);
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: .3;
+      font-size: 8px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-left: 5px;
+      transition: opacity .2s ease;
+      white-space: nowrap;
+      opacity: 1 !important;
+      letter-spacing: 1px;
+      font-weight: 400 !important;
+      content: 'darkmode: ' attr(data-darkmode) !important;
+    }
+  }
+}
+
+// ===============================
+// Bulk Actions Counter
+// ===============================
+
+.bulk-actions-counter {
+  background-color: var(--cms-accent-colour) !important;
+}
+
+// ===============================
+// Button Toolbar
+// ===============================
+
+.btn-toolbar {
+  border-color: var(--cms-border-colour) !important;
+}

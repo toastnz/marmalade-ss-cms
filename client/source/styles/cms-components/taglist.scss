@@ -1,0 +1,72 @@
+.tag-list {
+  .tag-component {
+    background-color: var(--cms-accent-colour) !important;
+
+    &,
+    &__delete {
+      color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+    }
+  }
+}
+
+// ===============================
+// SS Tag Field Styles
+// ===============================
+
+.ss-tag-field__menu {
+  border: 1px solid var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour--dynamic) !important;
+  box-shadow: none !important;
+}
+
+.ss-tag-field__option {
+  color: var(--cms-text-colour) !important;
+  background-color: var(--cms-background-colour--dynamic) !important;
+
+  &--is-focused {
+    color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+    background-color: var(--cms-accent-colour) !important;
+  }
+}
+
+
+// ===============================
+// SS Tag Field Styles
+// ===============================
+
+.ss-tag-field {
+  &__control {
+    color: var(--cms-text-colour);
+    border-color: var(--cms-border-colour) !important;
+    background-color: var(--cms-background-colour);
+
+    input {
+      background-color: transparent !important;
+    }
+  }
+
+  &__indicator-separator {
+    background-color: var(--cms-border-colour) !important;
+  }
+
+  svg {
+    color: var(--cms-text-colour);
+  }
+
+  .ss-tag-field__multi-value {
+    border-radius: 0;
+    border-color: var(--cms-background-colour--light) !important;
+  }
+
+  .ss-tag-field__multi-value__label,
+  .ss-tag-field__multi-value__remove {
+    border-radius: 0;
+    color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+    background-color: var(--cms-accent-colour) !important;
+    border-color: var(--cms-background-colour--light) !important;
+
+    svg {
+      color: inherit !important;
+    }
+  }
+}

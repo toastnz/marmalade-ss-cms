@@ -1,0 +1,23 @@
+// ===============================
+// Link Styles
+// ===============================
+
+.URL-link,
+.showOnClick a,
+.uploadfield__upload-button,
+.uploadfield__add-button,
+label a,
+p a,
+td a,
+a[target="_blank"],
+a:not([class]) {
+  color: var(--cms-link-colour) !important;
+}
+
+// ===============================
+// CMS Menu List Link Styles
+// ===============================
+
+.cms-menu__list li a {
+  color: var(--cms-text-colour) !important;
+}

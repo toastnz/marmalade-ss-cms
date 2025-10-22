@@ -1,0 +1,329 @@
+.modal-content,
+.modal-header,
+.modal-footer {
+  background-color: var(--cms-background-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+}
+
+.modal-header {
+  button {
+    &:before {
+      color: var(--cms-text-colour) !important;
+      text-shadow: none !important;
+    }
+  }
+}
+
+.ui-dialog-content {
+  background-color: var(--cms-background-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+}
+
+.ui-menu {
+  background-image: none !important;
+  background-color: var(--cms-background-colour--light) !important;
+  border: 1px solid var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+  padding: 5px !important;
+
+  li {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 5px !important;
+    }
+
+    >* {
+      background-image: none !important;
+      color: var(--cms-text-colour) !important;
+
+      &.ui-state-focus,
+      &.ui-state-active {
+        background-image: none !important;
+        background-color: var(--cms-accent-colour) !important;
+        color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+        border-color: transparent !important;
+      }
+    }
+  }
+}
+
+.popover-actions-simulate,
+.search-box__enter,
+.search-form__wrapper {
+  border-color: var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+  overflow: hidden;
+}
+
+.ui-widget-content {
+  background-image: none !important;
+}
+
+// ===============================
+// Marmalade Modal Styles
+// ===============================
+
+.marmalade-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity .3s ease;
+
+  // Modal background overlay
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cms-background-colour--dark);
+    opacity: 0.95;
+  }
+
+  // Modal close button
+  &:after {
+    content: '×';
+    position: absolute;
+    display: block;
+    line-height: 0;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 50%;
+    color: var(--cms-text-colour);
+    cursor: pointer;
+  }
+
+  // Active state
+  &--active {
+    opacity: 1;
+  }
+
+  // Modal wrapper
+  &__wrapper {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+
+  // Modal content
+  &__content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 50px 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: calc(100vw - 40px);
+      max-height: calc(100vh - 100px);
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+// ===============================
+// UI Dialog Modal Styles
+// ===============================
+
+.ui-dialog {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 60rem !important;
+  height: auto !important;
+  max-width: calc(100% - 40px) !important;
+  max-height: calc(100% - 40px) !important;
+  transform: translate(-50%, -50%) !important;
+
+  .ui-dialog-content {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .linkfield-dialog {
+    padding: 40px !important;
+  }
+
+  .btn {
+    margin-left: 0 !important;
+  }
+
+  .ui-tabs .ui-tabs-nav li a {
+    padding: 0 !important;
+  }
+
+  .form__field-extra-label {
+    float: none;
+  }
+
+  // Custom close button
+  .ui-button {
+    top: 0;
+    right: 0;
+    margin: 0;
+    border: 0;
+    z-index: 100;
+    transform: translate(25%, -25%) scale(1.2);
+    background-color: var(--cms-accent-colour);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 2px;
+      width: 60%;
+      background-color: var(--cms-background-colour);
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .ui-button-icon {
+      display: none;
+    }
+  }
+}
+
+// ===============================
+// Popover Styles
+// ===============================
+
+.popover {
+  background-color: var(--cms-background-colour--dynamic) !important;
+
+  .arrow {
+    border-top-color: var(--cms-background-colour--dynamic) !important;
+  }
+}
+
+// ===============================
+// TinyMCE Popup & Dialog Styles
+// ===============================
+
+.tox {
+  .tox-pop {
+
+    &:before,
+    &:after {
+      content: none !important;
+    }
+
+    &__dialog {
+      border-color: var(--cms-border-colour) !important;
+      background-color: var(--cms-background-colour--dynamic) !important;
+    }
+  }
+}
+
+.tox-dialog__body-content {
+  color: var(--cms-text-colour) !important;
+}
+
+// ===============================
+// HTML Editor White Background
+// ===============================
+
+.htmleditor.white-background {
+  iframe {
+    background-color: #fff !important;
+  }
+}
+
+// ===============================
+// TinyMCE Dialog Navigation
+// ===============================
+
+.tox-dialog {
+  &__body-nav-item {
+    color: var(--cms-text-colour) !important;
+
+    &--active {
+      border-color: var(--cms-accent-colour) !important;
+    }
+  }
+}
+
+// ===============================
+// TinyMCE Label
+// ===============================
+
+.tox-label {
+  color: var(--cms-text-colour) !important;
+}
+
+// ===============================
+// TinyMCE Collection Item Caret
+// ===============================
+
+.tox .tox-collection--list .tox-collection__item--active:not(.tox-collection__item--state-disabled) .tox-collection__item-caret svg {
+  fill: var(--cms-accent-colour) !important;
+}
+
+
+// ===============================
+// UI Dialog Styles
+// ===============================
+
+.ui-dialog {
+  background: var(--cms-background-colour--dynamic) !important;
+  border-color: var(--cms-border-colour) !important;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.ui-icon-closethick {
+  transform: scale(.75);
+}
+
+.ui-dialog-titlebar-close {
+  top: 5px !important;
+  right: 5px !important;
+  transform: none !important;
+}
+
+// ===============================
+// Darkmode UI Dialog Styles
+// ===============================
+
+body {
+  &[data-darkmode="on"] {
+    .ui-dialog {
+      .ui-resizable-handle {
+        filter: invert(1);
+      }
+    }
+  }
+
+  &[data-darkmode="auto"] {
+    @media (prefers-color-scheme: dark) {
+      .ui-dialog {
+        .ui-resizable-handle {
+          filter: invert(1);
+        }
+      }
+    }
+  }
+}

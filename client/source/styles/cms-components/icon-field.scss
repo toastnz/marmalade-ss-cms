@@ -1,0 +1,135 @@
+// ===============================
+// Icon Field Styles
+// ===============================
+
+// Option label SVG color handling
+.field.IconField .option label {
+  svg {
+    [fill^="#"] {
+      fill: currentColor;
+    }
+    [stroke^="#"] {
+      stroke: currentColor;
+    }
+  }
+}
+
+// Option label background and color
+.field.IconField .option input:not(:checked) + label {
+  background-color: var(--cms-background-colour) !important;
+  color: var(--cms-text-colour);
+}
+
+.field.IconField .option input:checked + label {
+  background-color: var(--cms-accent-colour) !important;
+  color: var(--cms-background-colour);
+}
+
+// ===============================
+// Icon Field List
+// ===============================
+
+ul.IconField {
+  display: block;
+  list-style: none;
+  border-radius: 0 !important;
+  padding: 20px 0 0;
+  letter-spacing: 20px;
+  font-size: 0;
+  border: 0 !important;
+  background-image: none !important;
+
+  .option {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(15.73% - 10px);
+    margin-bottom: 20px;
+
+    // Option input
+    input {
+      position: absolute;
+      opacity: 0;
+      height: 0;
+      width: 0;
+
+      &:checked {
+        + label {
+          background-color: var(--cms-border-colour);
+        }
+      }
+    }
+
+    // "None" option
+    input[value=""] {
+      + label {
+        color: var(--cms-background-colour--dynamic);
+        background-color: var(--cms-accent-colour) !important;
+
+        &:after {
+          content: none !important;
+        }
+
+        &:before {
+          content: 'none';
+          position: absolute;
+          color: inherit;
+          top: 50%;
+          left: 50%;
+          // opacity: .6;
+          font-size: 10px;
+          font-weight: bold;
+          letter-spacing: normal;
+          text-transform: uppercase;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    // Option label
+    label {
+      position: relative;
+      display: block;
+      border-radius: 3px;
+      margin: 0 !important;
+      cursor: pointer;
+      width: 100% !important;
+      height: 0 !important;
+      padding: 0 0 100% 0 !important;
+      color: var(--cms-text-colour);
+      background-color: var(--cms-background-colour);
+      box-shadow: inset 0 0 0 1px var(--cms-border-colour);
+      transition:
+        color .3s ease,
+        background-color .3s 0s ease;
+
+      &:hover {
+        background-color: var(--cms-background-colour--dark);
+      }
+    }
+
+    // Hide option image
+    img {
+      opacity: 0;
+    }
+
+    // Option SVG
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 75% !important;
+      height: 75% !important;
+      object-fit: contain;
+      object-position: center;
+      transform: translate(-50%, -50%);
+
+      [fill^="#"] {
+        fill: currentColor;
+      }
+      [stroke^="#"] {
+        stroke: currentColor;
+      }
+    }
+  }
+}

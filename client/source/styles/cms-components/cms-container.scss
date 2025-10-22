@@ -1,0 +1,22 @@
+// ===============================
+// CMS Container Base Styles
+// ===============================
+
+.cms-container {
+  overflow: hidden;
+  color: var(--cms-text-colour);
+}
+
+// ===============================
+// Content Header & Panels
+// ===============================
+
+.cms-content-header {
+  background-color: var(--cms-background-colour--dark);
+  border-bottom-color: var(--cms-border-colour);
+}
+
+.cms-content,
+.cms-panel-content {
+  background-color: var(--cms-background-colour) !important;
+}

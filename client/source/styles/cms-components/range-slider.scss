@@ -1,0 +1,164 @@
+@use 'sass:math';
+
+// ===============================
+// Range Slider Field Styles
+// ===============================
+
+// Hide text input for range sliders
+input[type="text"][min][max][step] {
+  display: none;
+}
+
+// Container with range slider
+:has(> .marmalade-range-slider) {
+  label {
+    margin-bottom: 0 !important;
+  }
+}
+
+// Range slider component
+.marmalade-range-slider {
+  font-size: 0;
+  margin-bottom: 0 !important;
+
+  input {
+    width: calc(100% - 50px) !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  input,
+  &:before {
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  &:before {
+    content: attr(data-value);
+    width: 50px;
+    font-size: 14px;
+    padding-right: 10px;
+    color: var(--cms-text-colour);
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+}
+
+// ===============================
+// Range Slider Variables
+// ===============================
+
+$track-color: var(--cms-border-colour);
+$thumb-color: var(--cms-accent-colour);
+
+$thumb-radius: 3px;
+$thumb-height: 30px;
+$thumb-width: 15px;
+$thumb-border-width: 0;
+$thumb-border-color: transparent;
+
+$track-width: 100%;
+$track-height: 5px;
+$track-border-width: 1px;
+$track-border-color: var(--cms-border-colour);
+
+$track-radius: 5px;
+
+// ===============================
+// Range Slider Mixins
+// ===============================
+
+@mixin track() {
+  width: $track-width;
+  height: $track-height;
+  cursor: pointer;
+}
+
+@mixin thumb() {
+  border: $thumb-border-width solid $thumb-border-color;
+  height: $thumb-height;
+  width: $thumb-width;
+  border-radius: $thumb-radius;
+  background: $thumb-color;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px hsl(from var(--cms-text-colour) h s l / 0.5);
+}
+
+// ===============================
+// Range Input Styles
+// ===============================
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: math.div($thumb-height, 2) 0;
+  width: $track-width;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track();
+
+    background: $track-color;
+    border-radius: $track-radius;
+    border: $track-border-width solid $track-border-color;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb();
+
+      -webkit-appearance: none;
+      margin-top: math.div((-$track-border-width * 2 + $track-height), 2) - math.div($thumb-height, 2);
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: $track-color;
+  }
+
+  &::-moz-range-track {
+    @include track();
+
+    background: $track-color;
+    border-radius: $track-radius;
+    border: $track-border-width solid $track-border-color;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb();
+  }
+
+  &::-ms-track {
+    @include track();
+
+    background: transparent;
+    border-color: transparent;
+    border-width: $thumb-width 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+
+  &::-ms-fill-upper {
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+
+  &::-ms-thumb {
+    @include thumb();
+  }
+
+  &:focus::-ms-fill-lower {
+    background: $track-color;
+  }
+
+  &:focus::-ms-fill-upper {
+    background: $track-color;
+  }
+}

@@ -1,0 +1,444 @@
+// ===============================
+// CMS Menu Logo Mixin
+// ===============================
+@mixin cms-logo($url, $width, $height) {
+  .cms-sitename {
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-bottom: percentage($height / $width);
+      background-image: url('#{$url}');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+// ===============================
+// CMS Menu Container
+// ===============================
+.cms-menu {
+  color: var(--cms-text-colour);
+  background-color: var(--cms-background-colour--dark);
+
+  &,
+  &.collapsed {
+    width: 250px !important;
+  }
+
+  // Subsites
+  .cms-subsites {
+    display: block !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid var(--cms-border-colour);
+
+    .chosen-single {
+      b {
+        background-position: 5px 8px !important;
+      }
+    }
+  }
+
+  // Panel content, menu list, panel toggle, subsites
+  .cms-panel-content,
+  .cms-menu__list,
+  .cms-panel-toggle,
+  .cms-subsites {
+    box-shadow: inset -1px 0 0 var(--cms-border-colour) !important;
+  }
+
+  // Header
+  &__header {
+    background-color: var(--cms-background-colour--dark);
+    box-shadow: inset -1px 0 0 var(--cms-border-colour) !important;
+  }
+
+  // Sitename
+  .cms-sitename {
+    border-bottom: 1px solid var(--cms-border-colour) !important;
+    background-color: var(--cms-background-colour--dark) !important;
+    box-shadow: inset -1px 0 0 var(--cms-border-colour) !important;
+    height: auto !important;
+    padding: 20px 30px !important;
+
+    &__link,
+    &__title {
+      display: none !important;
+    }
+  }
+
+  // Login status
+  .cms-login-status {
+    min-height: 0 !important;
+    font-size: 0 !important;
+    box-shadow: inset -1px -1px 0 var(--cms-border-colour) !important;
+
+    &__profile-link,
+    &__logout-link {
+      font-size: 14px !important;
+      position: relative !important;
+      display: inline-block !important;
+      vertical-align: middle;
+      min-height: 52px !important;
+      height: auto !important;
+      line-height: 50px !important;
+      text-transform: capitalize !important;
+      color: var(--cms-text-colour) !important;
+      background-color: transparent !important;
+
+      &:before {
+        font-size: inherit !important;
+        line-height: inherit !important;
+      }
+
+      span {
+        width: 100%;
+        padding-left: 0;
+      }
+
+      i {
+        position: relative !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin-bottom: -1px;
+      }
+
+      * {
+        color: inherit !important;
+        display: inline-block !important;
+        line-height: inherit !important;
+        width: auto !important;
+        height: auto !important;
+        vertical-align: middle !important;
+        opacity: 1 !important;
+      }
+    }
+
+    &__profile-link {
+      padding-left: 25px !important;
+      width: 80% !important;
+
+      span {
+        margin-top: -1px;
+        font-weight: 500;
+      }
+    }
+
+    &__logout-link {
+      width: 20% !important;
+      text-align: center !important;
+    }
+  }
+
+  // Menu icons
+  a {
+    i {
+      padding-left: 0 !important;
+    }
+  }
+
+  .menu__icon {
+    left: 0 !important;
+    width: 20px !important;
+    margin-top: 0 !important;
+    text-align: center !important;
+
+    &:before {
+      position: relative;
+      z-index: 1;
+      line-height: 30px !important;
+      color: var(--cms-text-colour);
+    }
+  }
+
+  // Menu list
+  &__list {
+    padding: 10px;
+
+    li {
+      margin-bottom: 10px !important;
+
+      &.current {
+        a {
+          color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+          background-color: var(--cms-accent-colour);
+
+          &:hover,
+          &:focus {
+            color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+            background-color: var(--cms-accent-colour) !important;
+          }
+        }
+
+        .menu__icon {
+          &:before {
+            color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+          }
+        }
+      }
+
+      a {
+        min-height: 0 !important;
+        padding: 0 0 0 15px !important;
+        text-align: left !important;
+        border-radius: 10px;
+        color: var(--cms-text-colour);
+        background-color: var(--cms-background-colour--dark);
+        box-shadow: none !important;
+        transition: background-color .2s ease;
+
+        &:hover,
+        &:focus {
+          color: var(--cms-text-colour);
+          background-color: var(--cms-background-colour--light) !important;
+        }
+
+        span {
+          display: inline-block !important;
+          vertical-align: middle !important;
+          position: relative !important;
+          left: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .text {
+          padding: 15px !important;
+          text-transform: capitalize;
+          font-weight: 500;
+        }
+      }
+
+      .icon-silverstripe-redirectedurls-admin-redirectedurladmin {
+        background: none !important;
+
+        &:before {
+          content: '@';
+          font-family: silverstripe !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-variant: normal !important;
+          text-transform: none !important;
+          font-size: 17px;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+    }
+  }
+
+  // Panel toggle
+  .cms-panel-toggle {
+    .cms-help__toggle,
+    .sticky-toggle,
+    .toggle-collapse,
+    .toggle-expand {
+      display: none !important;
+    }
+  }
+
+  // Chosen select styles
+  .chosen-single {
+    background-color: var(--cms-background-colour) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+
+  .chosen-drop {
+    border-color: var(--cms-border-colour) !important;
+    background-color: var(--cms-background-colour) !important;
+
+    .active-result {
+      background-color: var(--cms-background-colour) !important;
+    }
+  }
+}
+
+// ===============================
+// Mobile Menu Toggle Wrapper
+// ===============================
+.cms-mobile-menu-toggle-wrapper {
+  padding: 10px;
+}
+
+// ===============================
+// Mobile Menu Toggle
+// ===============================
+.cms-mobile-menu-toggle {
+  width: 32px;
+  height: 32px;
+  background-color: var(--cms-accent-colour);
+  border-radius: 5px;
+
+  span {
+    background-color: var(--cms-text-colour);
+  }
+}
+
+// ===============================
+// Panel Content & Login Status
+// ===============================
+.cms-menu .cms-login-status {
+  box-shadow: inset -1px -1px 0 var(--cms-border-colour) !important;
+}
+
+.cms-menu .cms-panel-content {
+  background: transparent !important;
+}
+
+// ===============================
+// CMS Sidebar Styles
+// ===============================
+
+#cms-menu {
+  width: 300px !important;
+
+  .cms-menu__list {
+    li {
+      &.children {
+        >a {
+          position: relative;
+
+          >.menu__icon {
+            color: inherit !important;
+
+            &:before {
+              content: '9';
+              color: inherit !important;
+            }
+          }
+        }
+
+        &.current {
+          >a {
+            color: var(--cms-text-colour) !important;
+            background-color: var(--cms-background-colour--light) !important;
+          }
+        }
+
+        .group {
+          margin-top: -10px;
+          margin-left: 0;
+          border-radius: 0 0 10px 10px;
+          background-color: var(--cms-background-colour--light) !important;
+          padding: 20px 10px 10px;
+
+          li {
+            background-color: transparent;
+
+            &.current {
+              a {
+                color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+                background-color: var(--cms-accent-colour) !important;
+              }
+            }
+
+            &:last-child {
+              margin-bottom: 0 !important;
+            }
+          }
+
+          a {
+            background-color: transparent !important;
+            height: auto !important;
+            color: var(--cms-text-colour) !important;
+
+            &:hover,
+            &:focus-visible,
+            &:active,
+            &.current {
+              background-color: var(--cms-background-colour--dark) !important;
+            }
+
+            .menu__icon {
+              color: inherit;
+
+              &:before {
+                color: inherit !important;
+              }
+            }
+          }
+        }
+
+        a {
+          display: block;
+        }
+      }
+
+      a {
+        .toggle-children {
+          all: initial;
+          display: block !important;
+          position: absolute !important;
+          z-index: 10;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          cursor: pointer;
+          color: inherit !important;
+
+          .toggle-children-icon {
+            all: initial !important;
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ===============================
+// Panel Toggle Styles
+// ===============================
+
+.cms-panel-toggle {
+  flex-wrap: wrap;
+  height: auto !important;
+  // padding: 0 !important;
+}
+
+// ===============================
+// SilverStripe CMS Version & Toolbar Icon
+// ===============================
+
+.silverstripe-cms-version,
+.silverstripe-cms-toolbar-icon {
+  display: block;
+}
+
+.silverstripe-cms-version {
+  order: 1;
+  display: block;
+  font-size: 10px;
+  padding: 8px 20px;
+  min-width: calc(100% + 40px);
+  margin-top: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: -10px;
+  border-right: 1px solid var(--cms-border-colour);
+  background-color: var(--cms-background-colour--dynamic);
+
+  span {
+    opacity: .5;
+    font-family: monospace;
+    color: var(--cms-text-colour);
+  }
+}
+
+// .silverstripe-cms-toolbar-icon {
+//   order: 0;
+//   margin: 15px 25px;
+// }
+
+// .silverstripe-cms-toolbar-icon--darkmode {
+//   &:after {
+//     margin-left: 10px !important;
+//   }
+// }

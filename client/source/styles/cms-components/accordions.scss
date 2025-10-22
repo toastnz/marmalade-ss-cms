@@ -1,0 +1,15 @@
+.ss-toggle .ui-accordion-header.ui-state-default {
+  background-color: var(--cms-background-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+
+  a {
+    color: inherit !important;
+  }
+}
+
+.ui-accordion-content {
+  background-color: var(--cms-background-colour--dark) !important;
+  border-color: var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+}

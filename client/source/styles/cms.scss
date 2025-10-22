@@ -1,0 +1,83 @@
+//------------------------------------------------------------------
+// Component imports
+//------------------------------------------------------------------
+
+@use 'sass:color';
+@use 'sass:map';
+@use 'cms-components' as *;
+
+//------------------------------------------------------------------
+// Variables
+//------------------------------------------------------------------
+
+:root {
+  --cms-theme: #0c0d0f;
+}
+
+@function colour-adjust($value, $hue: h, $saturation: s, $lightness: l, $alpha: 1) {
+  @return hsl(from #{$value} #{$hue} #{$saturation} #{$lightness} / #{$alpha});
+}
+
+@mixin dark-mode {
+  --cms-background-colour: #{colour-adjust(var(--cms-theme), h, 30%, 5%)};
+  --cms-background-colour--dark: #{colour-adjust(var(--cms-theme), h, 30%, 10%)};
+  --cms-background-colour--light: #{colour-adjust(var(--cms-theme), h, 30%, 15%)};
+  --cms-background-colour--dynamic: #{colour-adjust(var(--cms-theme), h, 30%, 15%)};
+  --cms-border-colour: #{colour-adjust(var(--cms-theme), h, 20%, 30%)};
+  --cms-accent-colour: #{var(--cms-theme)};
+  --cms-accent-text-colour: #000;
+  --cms-link-colour: #{colour-adjust(var(--cms-theme), h, s, 70%)};
+  --cms-text-colour: #e7e7e7;
+  --cms-accent-colour--dynamic: #{colour-adjust(var(--cms-theme), h, s, 80%)};
+  --code-syntax-orange: #f09156;
+  --code-syntax-green: #99c894;
+  --code-syntax-blue: #6598cc;
+  --code-syntax-yellow: #f6c862;
+  --code-syntax-red: #db686a;
+  --code-syntax-purple: #bf97c3;
+  --code-syntax-gray: #838383;
+}
+
+@mixin light-mode {
+  --cms-background-colour: #{colour-adjust(var(--cms-theme), h, 20%, 97%)};
+  --cms-background-colour--dark: #{colour-adjust(var(--cms-theme), h, 20%, 90%)};
+  --cms-background-colour--light: #{colour-adjust(var(--cms-theme), h, 20%, 100%)};
+  --cms-background-colour--dynamic: #{colour-adjust(var(--cms-theme), h, 20%, 85%)};
+  --cms-border-colour: #{colour-adjust(var(--cms-theme), h, 30%, 80%)};
+  --cms-accent-colour: #{var(--cms-theme)};
+  --cms-accent-text-colour: #000;
+  --cms-link-colour: #{colour-adjust(var(--cms-theme), h, s, 40%)};
+  --cms-text-colour: #202020;
+  --cms-accent-colour--dynamic: #{colour-adjust(var(--cms-theme), h, s, 40%)};
+  --code-syntax-orange: #965d0e;
+  --code-syntax-green: #287a2c;
+  --code-syntax-blue: #2062a8;
+  --code-syntax-yellow: #817000;
+  --code-syntax-red: #b22222;
+  --code-syntax-purple: #6c3fa7;
+  --code-syntax-gray: #4a4a4a;
+}
+
+//------------------------------------------------------------------
+// Document Setup
+//------------------------------------------------------------------
+
+:root {
+  @media (prefers-color-scheme: light) {
+    @include light-mode;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include dark-mode;
+  }
+}
+
+body {
+  &[data-darkmode="on"] {
+    @include dark-mode;
+  }
+
+  &[data-darkmode="off"] {
+    @include light-mode;
+  }
+}

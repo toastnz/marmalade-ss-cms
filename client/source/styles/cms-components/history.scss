@@ -1,0 +1,40 @@
+// ===============================
+// History Viewer Table Styles
+// ===============================
+
+.text-muted,
+ul.table .history-viewer__row--current .text-muted {
+  color: var(--cms-text-colour--dynamic) !important;
+}
+
+ul.table {
+  color: var(--cms-text-colour) !important;
+}
+
+.table .history-viewer__row--current,
+.table .history-viewer__row--current:hover {
+  color: var(--cms-text-colour) !important;
+}
+
+// ===============================
+// History Viewer Buttons
+// ===============================
+
+.history-viewer__close-button,
+.history-viewer__compare-button {
+  color: var(--cms-text-colour) !important;
+  border-color: currentColor !important;
+}
+
+// ===============================
+// History Viewer Row & Heading
+// ===============================
+
+.history-viewer__heading,
+.history-viewer__row {
+  border-color: var(--cms-border-colour) !important;
+}
+
+.history-viewer__row {
+  background-color: var(--cms-background-colour--dynamic) !important;
+}

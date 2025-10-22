@@ -1,0 +1,19 @@
+// ===============================
+// Character Count Styles
+// ===============================
+
+.cms-character-count {
+  &__counter {
+    display: block;
+    position: relative;
+    width: 100%;
+    font-size: 1rem;
+    text-align: right;
+    color: var(--cms-text-colour);
+    font-family: monospace;
+
+    &:before {
+      content: 'Characters: ';
+    }
+  }
+}

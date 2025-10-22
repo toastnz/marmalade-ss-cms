@@ -1,0 +1,154 @@
+$checkbox-tick-light: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 20%27%3e%3cpath fill=%27none%27 stroke=%27%23000%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%273%27 d=%27m6 10 3 3 6-6%27/%3e%3c/svg%3e");
+$checkbox-tick-dark: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 20%27%3e%3cpath fill=%27none%27 stroke=%27%23fff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%273%27 d=%27m6 10 3 3 6-6%27/%3e%3c/svg%3e");
+
+body {
+  --checbox-text-icon: #{$checkbox-tick-light};
+  // @media (prefers-color-scheme: light) {
+  //   --checbox-text-icon: #{$checkbox-tick-light};
+  // }
+
+  // @media (prefers-color-scheme: dark) {
+  //   --checbox-text-icon: #{$checkbox-tick-dark};
+  // }
+
+  // &[data-darkmode="on"] {
+  //   --checbox-text-icon: #{$checkbox-tick-dark};
+  // }
+
+  // &[data-darkmode="off"] {
+  //   --checbox-text-icon: #{$checkbox-tick-light};
+  // }
+}
+
+.form__field-holder.form-check {
+  margin-left: 0!important;
+}
+
+.form-check-input {
+  margin-top: 0!important;
+  height: 1.5rem!important;
+  width: 1.5rem!important;
+  margin-left: 0!important;
+  // padding-left: 0!important;
+  border-color: var(--cms-border-colour)!important;
+  background-color: var(--cms-background-colour--dynamic)!important;
+
+  &:checked {
+    background-color: var(--cms-accent-colour)!important;
+    border-color: var(--cms-border-colour)!important;
+    background-image: var(--checbox-text-icon)!important;
+  }
+
+  &:focus {
+    border-color: var(--cms-border-colour)!important;
+    box-shadow: none;
+  }
+}
+
+.form-check-label {
+  span {
+    &:before {
+      border-color: var(--cms-border-colour) !important;
+      background-color: transparent !important;
+    }
+  }
+
+  input:checked+span {
+    &:before {
+      background-color: var(--cms-background-colour--light) !important;
+    }
+  }
+}
+
+label:has(.form-check-input) {
+  user-select: none;
+}
+
+
+// // ===============================
+// // Checkbox Styles
+// // ===============================
+
+// $bar-height: 24px;
+// $bar-width: 30px;
+// $toggle-height: 20px;
+// $toggle-width: 13px;
+
+// // Custom Checkbox Input
+// input.checkbox {
+//   all: unset;
+//   appearance: initial;
+//   position: relative;
+//   display: inline-block;
+//   vertical-align: middle;
+//   height: $bar-height;
+//   width: $bar-width;
+//   margin-left: -9px!important;
+//   margin-right: 20px;
+//   border-radius: 3px;
+//   cursor: pointer;
+//   background-color: hsl(from var(--cms-border-colour) h s l / 0.5);
+//   box-shadow: 0 0 0 1px var(--cms-border-colour);
+
+//   --_toggle-translate-x: -100%;
+//   --_toggle-colour: var(--cms-text-colour, var(--grey));
+
+//   // Toggle
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     width: $toggle-width;
+//     height: $toggle-height;
+//     border-radius: 2px;
+//     background-color: var(--_toggle-colour);
+//     transform: translate(var(--_toggle-translate-x), -50%);
+//     box-shadow: inset 0 0 0 1px hsl(from var(--cms-text-colour) h s l / 0.5);
+//     transition:
+//       transform 0.3s,
+//       background-color 0.3s;
+//   }
+
+//   // Clickable area
+//   &:after {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     opacity: 0.1;
+//     width: $bar-width;
+//     height: $toggle-height;
+//     transform: translate(-50%, -50%);
+//   }
+
+//   // Checked state
+//   &:checked {
+//     --_toggle-colour: var(--cms-accent-colour, var(--blue));
+//     --_toggle-translate-x: 0%;
+
+//     background-color: transparent!important;
+//     border-color: var(--cms-accent-colour, var(--blue))!important;
+//     box-shadow: none!important;
+//   }
+// }
+
+// // ===============================
+// // Checkbox Field Description
+// // ===============================
+// .form-check {
+//   .form__field-description {
+//     margin-left: $bar-width + 10px;
+//     margin-bottom: 0;
+//   }
+// }
+
+// // ===============================
+// // Checkbox Group
+// // ===============================
+// .form-group.checkbox {
+//   .form-check {
+//     margin-left: 15px !important;
+//   }
+// }

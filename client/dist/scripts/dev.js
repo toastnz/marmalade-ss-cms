@@ -1,0 +1,1 @@
+(()=>{if("/dev/build"===window.location.pathname){let n=new MutationObserver(()=>{window.scrollTo(0,document.documentElement.scrollHeight-window.innerHeight)}),t=e=>{e.deltaY<0&&n.disconnect(),window.removeEventListener("wheel",t)};n.observe(document.documentElement,{childList:!0,subtree:!0}),window.addEventListener("wheel",t,{passive:!0})}})();

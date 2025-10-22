@@ -1,0 +1,28 @@
+.task {
+  &__title,
+  &__description {
+    color: var(--dev-text-colour)!important;
+  }
+
+  &__description {
+    opacity: .6;
+  }
+
+  &__label {
+    cursor: pointer;
+    color: var(--dev-primary-colour)!important;
+  }
+
+  &__selector:checked + &__label & {
+    &__label-inner {
+      border-color: var(--dev-primary-colour) !important;
+    }
+  }
+
+
+  &__button {
+    border: 0!important;
+    color: var(--dev-background-colour--dark)!important;
+    background-color: var(--dev-primary-colour)!important;
+  }
+}

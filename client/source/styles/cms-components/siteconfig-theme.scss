@@ -1,0 +1,290 @@
+// ===============================
+// CMS Tabset Customization
+// ===============================
+
+:where(.cms-tabset) {
+  .cms-edit-form {
+    &:not(.tabs-memory-updated) {
+      display: none !important;
+    }
+  }
+}
+
+// ===============================
+// CMS Content Customization
+// ===============================
+
+:where(.cms-content:not(.CMSPageEditController)) {
+  // Grid field table
+  .grid-field__table {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  // Tabset navigation
+  .cms-tabset-nav-primary {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    li {
+      order: 1;
+    }
+
+    [aria-controls="Root_Customization_set"] ~ [aria-controls="Root_Customization_set"] {
+      display: none;
+    }
+
+    [aria-controls="Root_Customization_set"] {
+      display: block;
+      order: 2;
+      margin-left: 40px !important;
+
+      a {
+        display: block !important;
+        position: relative;
+        border-radius: 5px;
+        font-weight: 500 !important;
+        padding: 5px 10px 5px 30px !important;
+        color: var(--cms-text-colour) !important;
+        background-color: var(--cms-border-colour);
+
+        &.active {
+          font-weight: 500 !important;
+          color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+          background-color: var(--cms-accent-colour);
+          // box-shadow:
+          //   0 0 0 2px var(--cms-background-colour--dark),
+          //   0 0 0 4px var(--cms-accent-colour)!important;
+        }
+
+        &.active,
+        &:hover,
+        &:focus-visible {
+          border-bottom-width: 0 !important;
+        }
+
+        &:before {
+          font-family: "silverstripe" !important;
+          content: 'm';
+          position: absolute !important;
+          top: 50%;
+          left: 10px;
+          // height: 1em;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  // Panel with tabs
+  :where(.cms-edit-form) > .panel {
+    &:has(.ui-tabs-nav) {
+      overflow: hidden !important;
+
+      fieldset,
+      #Root,
+      .tab-content,
+      .ss-tabset {
+        &:has(.ui-tabs-nav) {
+          height: 100%;
+
+          .tab-content {
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .ss-tabset {
+      &:not([aria-hidden="true"]) {
+        display: flex !important;
+        flex-direction: row !important;
+      }
+
+      .nav-tabs {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+        flex: 0 1 auto;
+        min-height: 100%;
+        width: min-content;
+        border-bottom: 0;
+        margin-right: 20px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        margin-bottom: 0;
+        border-right: 1px solid var(--cms-border-colour);
+        background-color: var(--cms-background-colour);
+
+        .nav-item {
+          padding: 0 !important;
+          margin-right: 0 !important;
+          margin-bottom: -10px !important;
+        }
+
+        .nav-link {
+          display: block;
+          border-radius: 5px;
+          font-weight: 500 !important;
+          line-height: 1.7;
+          text-transform: capitalize;
+
+          &:hover,
+          &:focus-visible {
+            background-color: var(--cms-border-colour);
+          }
+
+          &.active {
+            color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+            background-color: var(--cms-accent-colour);
+          }
+        }
+      }
+
+      .tab-content {
+        flex: 1;
+      }
+
+      // .form__field-holder.form-check {
+      //   margin-left: 10px !important;
+      // }
+
+      .form-group:last-child {
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+// ===============================
+// Settings Controller Customization
+// ===============================
+
+// #settings-controller-cms-content {
+  .cms-content-header {
+    min-height: min-content;
+  }
+  .cms-content-header-tabs {
+    min-height: 0;
+    padding-top: 0;
+
+    &.cms-tabset-nav-primary,
+    .cms-tabset-nav-primary {
+      margin-top: 0!important;
+      padding: 10px 0;
+
+      .ui-tabs-nav {
+        margin-top: 0!important;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      li {
+        &[aria-controls="Root_Customization_set"] {
+          a {
+            padding-left: 30px !important;
+          }
+        }
+
+        .ui-tabs-anchor {
+          padding: 5px 10px !important;
+        }
+
+        .ui-tabs-anchor {
+          border: 0 !important;
+          border-radius: 5px;
+
+          &:hover,
+          &:focus-visible {
+            background-color: var(--cms-border-colour);
+          }
+        }
+
+        &.ui-tabs-active {
+          .ui-tabs-anchor {
+            color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+            background-color: var(--cms-accent-colour);
+          }
+        }
+      }
+    }
+  }
+// }
+
+
+// ===============================
+// Font Settings Styles
+// ===============================
+
+#Root {
+  container-type: inline-size;
+}
+
+.cms-edit-form .tab-pane>.form-group.field {
+  max-width: none !important;
+
+  >.form__field-holder.font-settings {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .marmalade-range-slider {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: 0 !important;
+      align-items: center;
+      width: 100%;
+
+      @container (min-width: 1280px) {
+        &:first-child {
+          flex: 1;
+          padding-right: 15px;
+          border-right: 1px solid var(--cms-border-colour);
+        }
+
+        &:last-child {
+          width: 30%;
+          padding-left: 15px;
+        }
+      }
+
+      &:before {
+        order: 2;
+        flex-grow: 0;
+      }
+
+      label {
+        order: 0 !important;
+        flex: 0 !important;
+        min-width: 100% !important;
+        width: 100% !important;
+        display: block !important;
+        padding-left: 10px;
+        text-transform: uppercase;
+        color: var(--cms-text-colour) !important;
+      }
+
+      input {
+        flex: 1;
+        order: 1;
+      }
+    }
+  }
+}

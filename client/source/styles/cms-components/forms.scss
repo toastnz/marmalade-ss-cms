@@ -1,0 +1,477 @@
+input[type="url"],
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="password"],
+input[type="datetime-local"],
+.form-control,
+.field select,
+.field textarea,
+.field input.text,
+.form__field-holder input.readonly,
+.form__field-holder p.readonly,
+.form__field-holder span.readonly,
+.readonly .form__field-holder>div {
+  border-radius: 3px !important;
+  box-shadow: none !important;
+}
+
+.form-group,
+.form__divider {
+  &:after {
+    border-color: var(--cms-border-colour) !important;
+  }
+}
+
+.form__field-description,
+.form__field-extra-label {
+  color: var(--cms-text-colour--dynamic) !important;
+}
+
+.cms-add-form {
+  .radio {
+
+    &.selected,
+    &:hover {
+      background-color: var(--cms-background-colour--light) !important;
+    }
+  }
+}
+
+.uploadfield-item {
+  background-color: var(--cms-background-colour--dark) !important;
+  border-color: var(--cms-border-colour) !important;
+}
+
+// ===============================
+// CMS Fields Styles
+// ===============================
+
+$field-width: 83%;
+
+.cms-edit-form {
+  .tab-pane {
+    >.form-group.field {
+      display: block !important;
+      max-width: 1500px !important;
+      margin-bottom: 0;
+
+      // Clearfix
+      &:before,
+      &:after {
+        content: '' !important;
+        display: table !important;
+      }
+
+      &:after {
+        clear: both !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      // Field label and holder
+      >.form__field-label,
+      >.form__field-holder {
+        display: block !important;
+        float: left;
+        margin-bottom: 2rem;
+      }
+
+      >.form__field-label {
+        width: 100 - $field-width !important;
+        max-width: 100 - $field-width !important;
+      }
+
+      >.form__field-holder {
+        width: $field-width !important;
+        max-width: $field-width !important;
+      }
+    }
+  }
+}
+
+// ===============================
+// Field Description Styles
+// ===============================
+
+.form__field-description {
+  .warning {
+    color: rgb(216, 123, 0);
+    letter-spacing: 1px;
+  }
+}
+
+// ===============================
+// Edit Form Styles
+// ===============================
+
+#Form_EditForm {
+  .tab-pane {
+
+    // Headings
+    h2:not([class]) {
+      font-size: 1.25rem !important;
+      text-transform: uppercase;
+
+      &:not(:first-child) {
+        margin-top: 50px;
+      }
+    }
+
+    // Field with heading after
+    .field:has(+ h2) {
+      &:after {
+        translate: 0 25px;
+      }
+    }
+  }
+
+  // Form padding
+  padding-right: 0 !important;
+}
+
+// ===============================
+// Input Group Styles
+// ===============================
+
+.input-group {
+  input[type="text"] {
+    +.input-group-append {
+      position: relative;
+      margin-left: -5px;
+      z-index: 10 !important;
+    }
+  }
+}
+
+// ===============================
+// HTML Editor Field Group
+// ===============================
+
+.form-group.htmleditor {
+  iframe {
+    transition: background-color .2s ease;
+  }
+
+  .form__field-holder {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+
+    @media (min-width: 1200px) {
+      width: 66.66667% !important;
+      max-width: 66.66667% !important;
+      flex: 0 0 66.66667% !important;
+    }
+
+    @media (min-width: 1200px) {
+      width: 58.33333% !important;
+      max-width: 58.33333% !important;
+      flex: 0 0 58.33333% !important;
+    }
+  }
+
+  .form__field-label {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+
+    @media (min-width: 1200px) {
+      width: 16.66667% !important;
+      max-width: 16.66667% !important;
+      flex: 0 0 16.66667% !important;
+    }
+  }
+}
+
+
+// ===============================
+// Input Field Styles
+// ===============================
+
+input {
+
+  &[type="text"],
+  &[type="password"],
+  &[type="email"],
+  &[type="number"],
+  &[type="date"],
+  &[type="time"],
+  &[type="url"],
+  &[type="search"],
+  &[type="datetime-local"] {
+    background-color: var(--cms-background-colour--dark) !important;
+    border-color: var(--cms-border-colour) !important;
+    color: var(--cms-text-colour) !important;
+    box-shadow: none !important;
+    border-radius: 5px !important;
+
+    &:focus {
+      border-color: var(--cms-border-colour) !important;
+    }
+  }
+}
+
+input[type="search"] {
+
+  &,
+  &:focus {
+    border-color: transparent !important;
+  }
+}
+
+// ===============================
+// Textarea, Select, Static, Tree Dropdown
+// ===============================
+
+textarea,
+select,
+// .form-control-static.readonly,
+.treedropdownfield {
+  background-color: var(--cms-background-colour--dark) !important;
+  border-color: var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+}
+
+.form-control-static.readonly {
+  &:has(img:only-child) {
+    background-color: transparent!important;
+  }
+}
+
+textarea {
+  min-height: 50px !important;
+}
+
+// ===============================
+// SilverStripe CMS Model SiteTree
+// ===============================
+
+[data-name="SilverStripe-CMS-Model-SiteTree"] .col-FoundHide input,
+[data-name="SilverStripe-CMS-Model-SiteTree"] .col-action_SetOrderFoundHide input {
+  -webkit-appearance: auto !important;
+}
+
+// ===============================
+// Upload Field Styles
+// ===============================
+
+.uploadfield-item__complete-icon {
+  &:after {
+    color: var(--cms-accent-colour) !important;
+  }
+}
+
+.uploadfield__add-button,
+.uploadfield__upload-button {
+
+  &,
+  &:hover {
+    color: var(--cms-link-colour) !important;
+  }
+}
+
+.uploadfield-item__thumbnail {
+  border-radius: 0 !important;
+
+  &:not([style]) {
+    position: relative;
+    box-shadow: 0 0 0 1px var(--cms-border-colour);
+    background-color: var(--cms-background-colour--light);
+
+    &:before {
+      content: 'File';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 12px;
+      text-align: center;
+      color: var(--cms-text-colour);
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.uploadfield-item__specs,
+.editor__specs {
+  display: inline;
+  opacity: .7;
+  color: var(--cms-text-colour) !important;
+}
+
+// ===============================
+// Sortable Item
+// ===============================
+
+.sortable-item {
+  border-color: var(--cms-border-colour) !important;
+}
+
+// ===============================
+// Placeholder Styles
+// ===============================
+
+.field input.text,
+.field select,
+.field textarea,
+.form-control {
+  &::-webkit-input-placeholder {
+    opacity: .5 !important;
+    color: var(--cms-text-colour) !important;
+  }
+
+  &:-moz-placeholder {
+    opacity: .5 !important;
+    color: var(--cms-text-colour) !important;
+  }
+
+  &::-moz-placeholder {
+    opacity: .5 !important;
+    color: var(--cms-text-colour) !important;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: .5 !important;
+    color: var(--cms-text-colour) !important;
+  }
+}
+
+// ===============================
+// Form Field Holder Readonly
+// ===============================
+
+.form__field-holder input.readonly,
+.form__field-holder p.readonly,
+.form__field-holder span.readonly,
+.readonly .form__field-holder>div {
+  background-color: var(--cms-border-colour) !important;
+  border-color: var(--cms-border-colour) !important;
+}
+
+// ===============================
+// Field Group Label & Extra Label
+// ===============================
+
+.form__fieldgroup-label {
+  color: var(--cms-text-colour--dynamic) !important;
+}
+
+.form__field-extra-label {
+  float: left;
+}
+
+// ===============================
+// Form Edit Title
+// ===============================
+
+#Form_EditForm_Title {
+  width: 100% !important;
+}
+
+// ===============================
+// Form Field Update URL
+// ===============================
+
+.form__field-update-url {
+  border-radius: 3px !important;
+  margin-top: 10px !important;
+}
+
+// ===============================
+// File Select Form Specs
+// ===============================
+
+#Form_fileSelectForm_FileSpecs {
+  display: inline;
+}
+
+// ===============================
+// Read-Only Input Styles
+// ===============================
+
+input[readonly] {
+  border-radius: 0 !important;
+  border: 0 !important;
+  background-color: var(--cms-border-colour) !important;
+  pointer-events: none !important;
+}
+
+// ===============================
+// Search Form Styles
+// ===============================
+
+.search-form {
+  box-shadow: 0 0 0 1px var(--cms-border-colour) !important;
+  border-radius: 0 0 5px 5px !important;
+}
+
+.search-form__wrapper {
+  border-radius: inherit !important;
+  background-color: var(--cms-background-colour--dynamic) !important;
+}
+
+// ===============================
+// Field Group Component Label
+// ===============================
+
+.field-group-component__small-holder>.form-group .form__field-label {
+  color: var(--cms-text-colour) !important;
+}
+
+// ===============================
+// Update URL Field Styles
+// ===============================
+
+.form__field-holder {
+  &:has(.form__field-update-url) {
+    input {
+      width: 100% !important;
+    }
+  }
+}
+
+.form__field-update-url {
+  &:empty {
+    display: none !important;
+  }
+}
+
+// ===============================
+// User Forms Field Holder Styles
+// ===============================
+
+.form__field-holder {
+  .preview {
+    background-color: transparent !important;
+  }
+
+  .readonly {
+    background-color: var(--cms-background-colour--dark) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+
+  label.readonly {
+    background-color: transparent !important;
+  }
+}
+
+// ===============================
+// User Forms Field Label
+// ===============================
+
+.form__field-label {
+  color: var(--cms-text-colour);
+}
+
+// ===============================
+// User Forms Field Editor
+// ===============================
+
+.uf-field-editor {
+  .ss-gridfield-buttonrow-before {
+    background-color: var(--cms-background-colour--dark) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+}

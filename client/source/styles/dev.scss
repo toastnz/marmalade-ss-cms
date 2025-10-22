@@ -1,0 +1,16 @@
+@use 'sass:color';
+@use 'dev-components' as *;
+
+$dev-background: #222332;
+
+:root {
+  --dev-text-colour: #f1f1f1;
+  --dev-background-colour: #222332;
+  --dev-background-colour--dark: #{color.adjust(#222332, $lightness: -3%)};
+  --dev-background-colour--light: #{color.adjust(#222332, $lightness: 5%)};
+  --dev-border-colour: #{color.adjust(#222332, $lightness: 20%)};
+  --dev-primary-colour: #60a3d5;
+  --dev-success-colour: #5bd05e;
+  --dev-warning-colour: #f2af3c;
+  --dev-error-colour: #ff5a5a;
+}

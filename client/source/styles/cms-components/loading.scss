@@ -1,0 +1,56 @@
+// ===============================
+// Loader Spinner Styles
+// ===============================
+
+.cms-content-loading-spinner .spinner__animation__fill-left,
+.cms-content-loading-spinner .spinner__animation__fill-right {
+  stroke: var(--cms-accent-colour, var(--cms-text-colour)) !important;
+  transition: stroke 0.3s ease-in-out;
+}
+
+// ===============================
+// Loading Screen Styles
+// ===============================
+
+.ss-loading-screen {
+  background-color: var(--cms-background-colour);
+}
+
+.ss-loading-screen__logo {
+  path {
+    fill: var(--cms-accent-colour);
+    stroke: var(--cms-accent-colour);
+  }
+}
+
+.ss-loading-screen__text {
+  color: var(--cms-accent-colour);
+
+  svg {
+    circle {
+      fill: var(--cms-accent-colour);
+    }
+  }
+}
+
+// ===============================
+// Loading Spinner Styles
+// ===============================
+
+.cms-content-loading-spinner {
+  .spinner {
+    background-color: var(--cms-background-colour--dark) !important;
+  }
+
+  .spinner__animation__fill {
+    stroke: var(--cms-accent-colour);
+  }
+}
+
+// ===============================
+// Autocomplete Loading Styles
+// ===============================
+
+.ui-autocomplete-loading {
+  background-image: none !important;
+}

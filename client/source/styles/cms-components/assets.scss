@@ -1,0 +1,153 @@
+// ===============================
+// Asset Gallery Styles
+// ===============================
+
+$folder-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2232%22%3E%3Cg%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%2032V4.039h36V32z%22/%3E%3Cpath%20fill-opacity%3D%22.7%22%20d%3D%22M0%200h13.029l1.208%204.039H0z%22/%3E%3C/g%3E%3C/svg%3E");
+$file-icon-light: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22110%22%20height%3D%22110%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22%23A9A9A9%22%20d%3D%22M62.493%2020%2080%2036.739H62.493zM29%2083.478a5%205%200%200%200%205%205h41a5%205%200%200%200%205-5V85a5%205%200%200%201-5%205H34a5%205%200%200%201-5-5Z%22/%3E%3Cpath%20fill%3D%22%23D8D8D8%22%20fill-opacity%3D%22.5%22%20d%3D%22M34%2020h28.704v16.554H80v46.924a5%205%200%200%201-5%205H34a5%205%200%200%201-5-5V25a5%205%200%200%201%205-5Z%22/%3E%3C/g%3E%3C/svg%3E");
+$file-icon-dark: url('data:image/svg+xml, %3Csvg%20xmlns%3D%22http%3A //www.w3.org/2000/svg%22%20width%3D%22110%22%20height%3D%22110%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22%23A9A9A9%22%20fill-opacity%3D%22.3%22%20d%3D%22M62.493%2020%2080%2036.739H62.493zM29%2083.478a5%205%200%200%200%205%205h41a5%205%200%200%200%205-5V85a5%205%200%200%201-5%205H34a5%205%200%200%201-5-5Z%22/%3E%3Cpath%20fill%3D%22%23D8D8D8%22%20fill-opacity%3D%22.7%22%20d%3D%22M34%2020h28.704v16.554H80v46.924a5%205%200%200%201-5%205H34a5%205%200%200%201-5-5V25a5%205%200%200%201%205-5Z%22/%3E%3C/g%3E%3C/svg%3E');
+
+// Gallery file icon variables based on theme
+body {
+  @media (prefers-color-scheme: light) {
+    // --gallery-file-icon: url('images/cms/file-icon--light.svg');
+    --gallery-file-icon: #{$file-icon-light};
+  }
+  @media (prefers-color-scheme: dark) {
+    // --gallery-file-icon: url('images/cms/file-icon--dark.svg');
+    --gallery-file-icon: #{$file-icon-dark};
+  }
+  &[data-darkmode="on"] {
+    // --gallery-file-icon: url('images/cms/file-icon--dark.svg');
+    --gallery-file-icon: #{$file-icon-dark};
+  }
+  &[data-darkmode="off"] {
+    // --gallery-file-icon: url('images/cms/file-icon--light.svg');
+    --gallery-file-icon: #{$file-icon-light};
+  }
+}
+
+// Gallery Item
+.gallery-item {
+  // Overlay on hover/focus/active
+  &:hover &,
+  &:focus-visible &,
+  &:active & {
+    &--overlay {
+      opacity: 1 !important;
+    }
+  }
+
+  // Folder and file thumbnail base styles
+  &--folder &,
+  &--false & {
+    &__thumbnail {
+      background-image: none !important;
+      position: relative !important;
+      opacity: 1 !important;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        mask-repeat: no-repeat;
+      }
+    }
+  }
+
+  // Folder thumbnail
+  &--folder & {
+    &__thumbnail {
+      &:before {
+        background-color: var(--cms-accent-colour--dynamic) !important;
+        mask-image: $folder-icon;
+        mask-position: 12px 14px;
+        mask-size: 27px 24px;
+      }
+    }
+    &--overlay {
+      display: none !important;
+    }
+  }
+
+  // File thumbnail
+  &--false & {
+    &__thumbnail {
+      &:before {
+        background-color: var(--cms-accent-colour--dynamic) !important;
+        mask-image: var(--gallery-file-icon);
+        mask-position: center;
+        mask-size: contain;
+      }
+    }
+  }
+
+  // Overlay styles
+  &--overlay {
+    display: block !important;
+    opacity: 0 !important;
+    background: hsl(from var(--cms-accent-colour) h s l / 0.6) !important;
+    transition: opacity .3s ease !important;
+
+    &.font-icon-eye {
+      z-index: 1;
+      color: var(--cms-accent-text-colour) !important;
+
+      &:before {
+        font-size: 18px;
+        vertical-align: middle;
+        top: -1px !important;
+      }
+    }
+  }
+}
+
+.asset-dropzone {
+  &.uploadfield__dropzone {
+    background-color: var(--cms-background-colour--dark) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+
+  .gallery-item {
+    background-color: var(--cms-background-colour--dark) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+
+  .gallery-item__checkbox-label {
+    &:before {
+      background-color: var(--cms-background-colour--light) !important;
+      border-color: var(--cms-border-colour) !important;
+    }
+  }
+
+  .gallery-item--selected .gallery-item__checkbox-label {
+    &:before {
+      color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+      background-color: var(--cms-accent-colour) !important;
+    }
+  }
+}
+
+.gallery-item__thumbnail {
+  &:not([style]) {
+    background-color: transparent !important;
+    opacity: .75 !important;
+  }
+}
+
+.gallery__sort {
+  .chosen-single {
+    >span {
+      &:before {
+        color: var(--cms-text-colour);
+      }
+    }
+  }
+}
+
+.gallery__table .footer-container,
+.gallery__table .footer-container:hover {
+  background-color: var(--cms-background-colour) !important;
+}

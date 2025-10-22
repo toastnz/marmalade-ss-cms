@@ -1,0 +1,143 @@
+a .jstree-pageicon,
+.record-icon,
+a .jstree-recordicon,
+.cms-tree ul li a,
+.ui-widget,
+.ui-widget-content,
+.btn-secondary {
+  color: var(--cms-text-colour) !important;
+}
+
+.jstree-apple a {
+  text-shadow: none !important;
+}
+
+// ===============================
+// CMS Site Tree Styles
+// ===============================
+
+.cms-tree {
+  ul {
+    li {
+      a {
+        background: none !important;
+        border-radius: 3px;
+        overflow: hidden;
+        transition:
+          background-color .2s ease,
+          box-shadow .2s ease;
+
+        &.jstree-hovered {
+          box-shadow: inset 0 0 0 100px var(--cms-background-colour--dark);
+        }
+      }
+    }
+  }
+}
+
+// ===============================
+// Context Menu Styles
+// ===============================
+
+#vakata-contextmenu {
+  background: var(--cms-background-colour--dark) !important;
+  border-color: var(--cms-border-colour) !important;
+  color: var(--cms-text-colour) !important;
+  box-shadow: none !important;
+
+  &:before {
+    border-color: var(--cms-background-colour--dark) transparent !important;
+  }
+
+  &:after {
+    border-color: var(--cms-border-colour) transparent !important;
+  }
+
+  a {
+    color: inherit !important;
+    background: var(--cms-background-colour--dark) !important;
+
+    &:hover {
+      background: var(--cms-background-colour--light) !important;
+    }
+  }
+
+  ul {
+    box-shadow: none !important;
+    border-color: var(--cms-border-colour) !important;
+    background: var(--cms-background-colour--dark) !important;
+  }
+}
+
+// ===============================
+// Tree Status Badge Styles
+// ===============================
+
+.cms-tree.jstree span.badge.status-modified,
+.jstree .status-modified>.jstree-clicked,
+.jstree .status-modified>.jstree-hovered,
+.cms-tree.jstree span.badge.status-addedtodraft,
+.jstree .status-addedtodraft>.jstree-clicked,
+.jstree .status-addedtodraft>.jstree-hovered {
+  background-color: var(--cms-background-colour--dark);
+}
+
+// ===============================
+// Tree Dropdown Field Styles
+// ===============================
+
+.treedropdownfield {
+  &__input {
+    opacity: 0 !important;
+  }
+}
+
+// ===============================
+// Tree Dropdown Field Styles
+// ===============================
+
+.treedropdownfield {
+  &__control {
+    border-color: var(--cms-border-colour) !important;
+    background-color: var(--cms-background-colour--dark) !important;
+  }
+
+  &__indicator-separator {
+    background-color: var(--cms-border-colour) !important;
+  }
+
+  &__indicator {
+    svg {
+      color: var(--cms-text-colour) !important;
+    }
+  }
+
+  &__menu {
+    z-index: 100;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 2rem 0 rgba(0, 0, 0, 0.3);
+    background-color: var(--cms-background-colour--dark) !important;
+    border-color: var(--cms-border-colour) !important;
+  }
+
+  &__menu-list {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__option {
+    cursor: pointer;
+    color: var(--cms-text-colour) !important;
+    background-color: var(--cms-background-colour--dynamic) !important;
+    border-color: var(--cms-border-colour) !important;
+
+    &:hover {
+      background-color: var(--cms-background-colour) !important;
+    }
+  }
+
+  &__single-value {
+    color: var(--cms-text-colour) !important;
+  }
+}

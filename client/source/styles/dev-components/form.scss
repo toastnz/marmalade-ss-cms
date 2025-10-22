@@ -1,0 +1,31 @@
+.info.header ~ .info {
+  margin-top: 140px;
+  padding: 15px!important;
+  color: var(--dev-warning-colour);
+  margin-bottom: 0;
+}
+
+form {
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+
+  input[type="submit"] {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 0 !important;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    color: var(--dev-background-colour--dark) !important;
+    background-color: var(--dev-primary-colour) !important;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

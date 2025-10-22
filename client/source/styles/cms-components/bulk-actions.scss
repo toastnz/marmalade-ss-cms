@@ -1,0 +1,22 @@
+// ===============================
+// Bulk Actions
+// ===============================
+
+.bulk-actions {
+  border-color: var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour) !important;
+
+  &__action {
+    cursor: pointer;
+    color: var(--cms-text-colour) !important;
+
+    &:hover {
+      background-color: var(--cms-background-colour--dark) !important;
+    }
+  }
+
+  &-counter {
+    color: var(--cms-text-colour) !important;
+    background-color: var(--cms-background-colour--dynamic) !important;
+  }
+}

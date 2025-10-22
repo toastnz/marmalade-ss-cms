@@ -1,0 +1,119 @@
+// ===============================
+// Colour Palette Container Styles
+// ===============================
+
+div:has(> .colourpalette) {
+  margin-bottom: 0 !important;
+
+  label {
+    margin-bottom: 10px !important;
+  }
+
+  ul {
+    margin-bottom: 10px;
+  }
+}
+
+// ===============================
+// Color Palette Styles
+// ===============================
+
+// Main color palette list
+ul.colorpalette {
+  margin-bottom: 0;
+
+  li {
+    label {
+      position: relative;
+      border: 0 !important;
+      // border-radius: .5rem;
+      // outline: 2px solid #ced5e1!important;
+    }
+
+    // "None" option
+    input[value="None"],
+    input[value="none"],
+    input[value="transparent"] {
+      + label:before {
+        content: 'unset';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: .6;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transform: translate(-50%, -50%);
+      }
+
+      &:checked + label:before {
+        content: none;
+      }
+    }
+  }
+}
+
+// Colorpalette container and overflow
+.colorpalette {
+  .form__field-holder,
+  ul,
+  li {
+    overflow: visible !important;
+  }
+
+  ul.colorpalette {
+    li {
+      display: inline-block;
+      float: none !important;
+
+      label {
+        outline: 1px solid var(--cms-border-colour) !important;
+      }
+    }
+  }
+
+  // Tooltip label
+  label {
+    span {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      top: -5px;
+      left: -5px;
+      padding: 0 4px;
+      border-radius: 2px;
+      font-size: 1rem;
+      white-space: nowrap;
+      text-transform: capitalize;
+      border: 1px solid var(--cms-border-colour);
+      background-color: var(--cms-background-colour--dark);
+      color: var(--cms-text-colour);
+    }
+
+    &:hover {
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+// Palette layout and sizing
+ul.colorpalette {
+  font-size: 0;
+  padding-top: 10px;
+
+  li {
+    label {
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      border-radius: 1px;
+
+      &:after {
+        font-size: 14px;
+      }
+    }
+  }
+}
