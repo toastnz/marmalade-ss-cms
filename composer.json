@@ -25,7 +25,7 @@
         "silverstripe/cms": "^5 || ^6",
         "silverstripe/framework": "^5 || ^6",
         "composer/installers": "*",
-        "symbiote/silverstripe-gridfieldextensions": "^4",
+        "symbiote/silverstripe-gridfieldextensions": "^4 || ^5",
         "undefinedoffset/sortablegridfield": "^2.0.4",
         "tractorcow/silverstripe-colorpicker": "4.2"
     },
