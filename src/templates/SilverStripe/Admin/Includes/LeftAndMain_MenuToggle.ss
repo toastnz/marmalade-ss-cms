@@ -8,5 +8,5 @@
 </cms-colour-picker>
 
 <div class="silverstripe-cms-version">
-    <span>SilverStripe {$CMSVersionNumber} | Marmalade 6</span>
+    <span>SilverStripe {$CMSVersionNumber} | Marmalade {$MarmaladeVersionNumber}</span>
 </div>
