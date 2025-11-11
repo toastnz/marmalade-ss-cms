@@ -24,10 +24,7 @@
         "php": ">=8.1",
         "silverstripe/cms": "^5 || ^6",
         "silverstripe/framework": "^5 || ^6",
-        "composer/installers": "*",
-        "symbiote/silverstripe-gridfieldextensions": "^4 || ^5",
-        "undefinedoffset/sortablegridfield": "^2.0.4 || ^3",
-        "tractorcow/silverstripe-colorpicker": "4.2 || ^5"
+        "composer/installers": "*"
     },
     "extra": {
         "expose": [
