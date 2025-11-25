@@ -8,6 +8,7 @@
     [fill^="#"] {
       fill: currentColor;
     }
+
     [stroke^="#"] {
       stroke: currentColor;
     }
@@ -15,12 +16,12 @@
 }
 
 // Option label background and color
-.field.IconField .option input:not(:checked) + label {
+.field.IconField .option input:not(:checked)+label {
   background-color: var(--cms-background-colour) !important;
   color: var(--cms-text-colour);
 }
 
-.field.IconField .option input:checked + label {
+.field.IconField .option input:checked+label {
   background-color: var(--cms-accent-colour) !important;
   color: var(--cms-background-colour);
 }
@@ -54,7 +55,7 @@ ul.IconField {
       width: 0;
 
       &:checked {
-        + label {
+        +label {
           background-color: var(--cms-border-colour);
         }
       }
@@ -62,7 +63,7 @@ ul.IconField {
 
     // "None" option
     input[value=""] {
-      + label {
+      +label {
         color: var(--cms-background-colour--dynamic);
         background-color: var(--cms-accent-colour) !important;
 
@@ -108,12 +109,7 @@ ul.IconField {
       }
     }
 
-    // Hide option image
-    img {
-      opacity: 0;
-    }
-
-    // Option SVG
+    img,
     svg {
       position: absolute;
       top: 50%;
@@ -123,10 +119,20 @@ ul.IconField {
       object-fit: contain;
       object-position: center;
       transform: translate(-50%, -50%);
+    }
 
+    &:has(svg) {
+      img {
+        opacity: 0;
+      }
+    }
+
+    // Option SVG
+    svg {
       [fill^="#"] {
         fill: currentColor;
       }
+
       [stroke^="#"] {
         stroke: currentColor;
       }
