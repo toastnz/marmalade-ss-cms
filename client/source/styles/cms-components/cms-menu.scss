@@ -256,6 +256,11 @@
     .active-result {
       background-color: var(--cms-background-colour) !important;
     }
+
+    .result-selected {
+      color: var(--cms-text-colour) !important;
+      background-color: var(--cms-background-colour--dynamic) !important;
+    }
   }
 }
 
