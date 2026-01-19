@@ -1,0 +1,37 @@
+.elemental-editor-list {
+  border-top-color: var(--cms-border-colour)!important;
+}
+
+.element-editor__element {
+  background-color: var(--cms-background-colour)!important;
+  border-color: var(--cms-border-colour)!important;
+
+  &:hover {
+    background-color: var(--cms-background-colour--dynamic)!important;
+  }
+
+  &[draggable="false"] {
+    background-color: var(--cms-background-colour) !important;
+  }
+
+  .font-icon-block-layout,
+  .element-editor-header__title,
+  .element-editor-summary__content {
+    color: var(--cms-text-colour)!important;
+  }
+
+  .element-editor-header__icon-container {
+    [class^="font-icon-"] {
+      color: var(--cms-text-colour)!important;
+    }
+  }
+}
+
+.element-editor__hover-bar-line {
+  background-color: var(--cms-accent-colour)!important;
+
+  &:before {
+    color: var(--cms-accent-colour)!important;
+    background-image: radial-gradient(var(--cms-accent-text-colour) 50%, transparent 50%)!important;
+  }
+}
