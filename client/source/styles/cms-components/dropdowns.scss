@@ -75,7 +75,18 @@
 .dropdown-menu {
   color: var(--cms-text-colour) !important;
   background-color: var(--cms-background-colour--dynamic) !important;
+
+  .dropdown-item {
+    color: var(--cms-text-colour) !important;
+
+    &:hover,
+    &:focus {
+      color: var(--cms-accent-text-colour, var(--cms-background-colour--dark)) !important;
+      background-color: var(--cms-accent-colour) !important;
+    }
+  }
 }
+
 
 
 .gallery__sort .chosen-container-active .chosen-single {
