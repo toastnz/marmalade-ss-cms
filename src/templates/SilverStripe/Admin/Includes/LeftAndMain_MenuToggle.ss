@@ -8,5 +8,5 @@
 </cms-colour-picker>
 
 <div class="silverstripe-cms-version">
-    <span>SilverStripe {$CMSVersionNumber} | Marmalade {$MarmaladeVersionNumber}</span>
+    <span>SilverStripe {$CMSVersionNumber} | Marmalade <% if $MarmaladeVersionNumber %>{$MarmaladeVersionNumber}<% else %>CMS<% end_if %></span>
 </div>
