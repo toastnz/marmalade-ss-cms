@@ -1,0 +1,8 @@
+.campaign-info {
+  background-color: var(--cms-background-colour)!important;
+  border-color: var(--cms-border-colour)!important;
+
+  &__close {
+    color: var(--cms-text-colour)!important;
+  }
+}
