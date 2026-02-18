@@ -5,6 +5,7 @@
 .cms-container {
   overflow: hidden;
   color: var(--cms-text-colour);
+  background-color: transparent;
 }
 
 // ===============================
@@ -17,6 +18,18 @@
 }
 
 .cms-content,
-.cms-panel-content {
-  background-color: var(--cms-background-colour) !important;
+.cms-panel-content,
+.cms-content-tools {
+  background-color: transparent!important;
+}
+
+// Target all scrollbars within the CMS interface and set their track colour to transparent, and thumb colour to the CMS accent colour
+body {
+  background-color: var(--cms-background-colour);
+
+  &,
+  * {
+    scrollbar-color: var(--cms-border-colour) transparent!important;
+    scrollbar-width: thin!important;
+  }
 }

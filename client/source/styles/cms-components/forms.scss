@@ -27,7 +27,18 @@ input[type="datetime-local"],
 
 .form__field-description,
 .form__field-extra-label {
-  color: var(--cms-text-colour--dynamic) !important;
+  font-size: 13px!important;
+  color: var(--cms-text-colour) !important;
+}
+
+.form__field-description {
+  margin-top: 5px!important;
+  margin-bottom: 5px!important;
+  padding: 10px!important;
+  border-radius: 3px!important;
+  opacity: .8;
+  border: 1px solid var(--cms-border-colour) !important;
+  background-color: var(--cms-background-colour--dynamic)!important;
 }
 
 .cms-add-form {

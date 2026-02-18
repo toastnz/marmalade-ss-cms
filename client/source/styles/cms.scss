@@ -21,13 +21,14 @@
 @mixin dark-mode {
   --cms-background-colour: #{colour-adjust(var(--cms-theme), h, 30%, 5%)};
   --cms-background-colour--dark: #{colour-adjust(var(--cms-theme), h, 30%, 10%)};
-  --cms-background-colour--light: #{colour-adjust(var(--cms-theme), h, 30%, 15%)};
-  --cms-background-colour--dynamic: #{colour-adjust(var(--cms-theme), h, 30%, 15%)};
-  --cms-border-colour: #{colour-adjust(var(--cms-theme), h, 20%, 30%)};
+  --cms-background-colour--light: #{colour-adjust(var(--cms-theme), h, 40%, 15%)};
+  --cms-background-colour--dynamic: #{colour-adjust(var(--cms-theme), h, 40%, 15%)};
+  --cms-border-colour: #{colour-adjust(var(--cms-theme), h, 20%, 40%)};
   --cms-accent-colour: #{var(--cms-theme)};
   --cms-accent-text-colour: #000;
   --cms-link-colour: #{colour-adjust(var(--cms-theme), h, s, 70%)};
   --cms-text-colour: #e7e7e7;
+  --cms-text-colour--dynamic: #a9a9a9;
   --cms-accent-colour--dynamic: #{colour-adjust(var(--cms-theme), h, s, 80%)};
   --code-syntax-orange: #f09156;
   --code-syntax-green: #99c894;
@@ -39,15 +40,16 @@
 }
 
 @mixin light-mode {
-  --cms-background-colour: #{colour-adjust(var(--cms-theme), h, 20%, 97%)};
-  --cms-background-colour--dark: #{colour-adjust(var(--cms-theme), h, 20%, 90%)};
-  --cms-background-colour--light: #{colour-adjust(var(--cms-theme), h, 20%, 100%)};
-  --cms-background-colour--dynamic: #{colour-adjust(var(--cms-theme), h, 20%, 85%)};
-  --cms-border-colour: #{colour-adjust(var(--cms-theme), h, 30%, 80%)};
+  --cms-background-colour: #{colour-adjust(var(--cms-theme), h, 20%, 94%)};
+  --cms-background-colour--dark: #{colour-adjust(var(--cms-theme), h, 30%, 90%)};
+  --cms-background-colour--light: #{colour-adjust(var(--cms-theme), h, 40%, 100%)};
+  --cms-background-colour--dynamic: #{colour-adjust(var(--cms-theme), h, 40%, 85%)};
+  --cms-border-colour: #{colour-adjust(var(--cms-theme), h, 20%, 70%)};
   --cms-accent-colour: #{var(--cms-theme)};
   --cms-accent-text-colour: #000;
   --cms-link-colour: #{colour-adjust(var(--cms-theme), h, s, 40%)};
   --cms-text-colour: #202020;
+  --cms-text-colour--dynamic: #454545;
   --cms-accent-colour--dynamic: #{colour-adjust(var(--cms-theme), h, s, 40%)};
   --code-syntax-orange: #965d0e;
   --code-syntax-green: #287a2c;
