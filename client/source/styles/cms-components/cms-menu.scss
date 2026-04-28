@@ -76,6 +76,25 @@
     font-size: 0 !important;
     box-shadow: inset -1px -1px 0 var(--cms-border-colour) !important;
 
+    &__profile-icon {
+      position: relative !important;
+      display: inline-block !important;
+      vertical-align: middle;
+      vertical-align: middle;
+      top: 2px !important;
+      left: auto !important;
+      min-height: 52px !important;
+      height: auto !important;
+      line-height: 50px !important;
+      color: var(--cms-text-colour) !important;
+      background-color: transparent !important;
+      margin-right: 20px !important;
+    }
+
+    &__profile-text {
+      padding-left: 0 !important;
+    }
+
     &__profile-link,
     &__logout-link {
       font-size: 14px !important;
@@ -305,6 +324,10 @@
 
   .cms-menu__list {
     li {
+      &.opened {
+        border-left: 0!important;
+      }
+
       &.children {
         >a {
           position: relative;
