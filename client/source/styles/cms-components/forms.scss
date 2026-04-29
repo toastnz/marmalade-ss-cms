@@ -486,3 +486,39 @@ input[readonly] {
     border-color: var(--cms-border-colour) !important;
   }
 }
+
+// ===============================
+// Add Page Form Styles
+// ===============================
+
+.cms-add-form {
+  .radio {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 100vw;
+
+    .form-label {
+      margin-bottom: 0 !important;
+    }
+
+    .form__field-description {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      border: 0 !important;
+      padding: 0 !important;
+      background-color: transparent !important;
+      margin-left: 10px;
+    }
+  }
+}
+
+// ===============================
+// Focus Styles
+// ===============================
+
+:root {
+  --focus-outline-color: var(--cms-accent-colour) !important;
+}
