@@ -11,7 +11,6 @@ Document Setup
 import './components/seo-messenger';
 import './components/tab-memory';
 import './components/field-names';
-import './components/modal';
 import './components/tiny-mce';
 import './components/code-syntax';
 import './components/icon-field-svg';
